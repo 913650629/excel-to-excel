@@ -32,55 +32,55 @@ public class DemoData {
 
     }
 
-    @ExcelProperty("交易号")
+    @ExcelProperty(Constants.jyh)
     private String jyh;
-    @ExcelProperty("店铺名称")
+    @ExcelProperty(Constants.dlj)
     private String dpmc;
-    @ExcelProperty("买家昵称")
+    @ExcelProperty(Constants.mjnc)
     private String mjnc;
-    @ExcelProperty("卖家备注")
+    @ExcelProperty(Constants.mjbz)
     private String mjbz;
-    @ExcelProperty("收货人")
+    @ExcelProperty(Constants.shr)
     private String shr;
-    @ExcelProperty("收货地址")
+    @ExcelProperty(Constants.shdz)
     private String shdz;
-    @ExcelProperty("省")
+    @ExcelProperty(Constants.sheng)
     private String sheng;
-    @ExcelProperty("市")
+    @ExcelProperty(Constants.shi)
     private String shi;
-    @ExcelProperty("区")
+    @ExcelProperty(Constants.qu)
     private String qu;
-    @ExcelProperty("收货人手机")
+    @ExcelProperty(Constants.shrsj)
     private String shrsj;
-    @ExcelProperty("收货人电话")
+    @ExcelProperty(Constants.shrdh)
     private String shrdh;
-    @ExcelProperty("快递编号")
+    @ExcelProperty(Constants.kdbh)
     private String kdbh;
-    @ExcelProperty("快递成本")
+    @ExcelProperty(Constants.kdcb)
     private String kdcb;
-    @ExcelProperty("快递费用")
+    @ExcelProperty(Constants.kdfy)
     private String kdfy;
-    @ExcelProperty("是否货到付款")
+    @ExcelProperty(Constants.sfhdfk)
     private String sfhdfk;
-    @ExcelProperty("订单类型")
+    @ExcelProperty(Constants.ddlx)
     private String ddlx;
-    @ExcelProperty("SKU")
+    @ExcelProperty(Constants.sku)
     private String sku;
-    @ExcelProperty("销售单价")
+    @ExcelProperty(Constants.xsdj)
     private String xsdj;
-    @ExcelProperty("代理价")
+    @ExcelProperty(Constants.dlj)
     private String dlj;
-    @ExcelProperty("数量")
+    @ExcelProperty(Constants.sl)
     private String sl;
-    @ExcelProperty("邮编")
+    @ExcelProperty(Constants.yb)
     private String yb;
-    @ExcelProperty("发票抬头")
+    @ExcelProperty(Constants.fptt)
     private String fptt;
-    @ExcelProperty("发票内容")
+    @ExcelProperty(Constants.fpnr)
     private String fpnr;
-    @ExcelProperty("业务员")
+    @ExcelProperty(Constants.ywy)
     private String ywy;
-    @ExcelProperty("预留属性1")
+    @ExcelProperty(Constants.ylsx1)
     private String ylsx1;
 
 
