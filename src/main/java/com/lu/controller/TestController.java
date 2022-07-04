@@ -6,26 +6,29 @@ import com.pig4cloud.plugin.excel.annotation.RequestExcel;
 import com.pig4cloud.plugin.excel.annotation.ResponseExcel;
 import com.pig4cloud.plugin.excel.annotation.Sheet;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import com.lu.service.TestService;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
 @RequestMapping
 public class TestController {
 
-    @RequestMapping("/upload")
-    @ResponseExcel(name = "test", sheets = @Sheet(sheetName = "testSheet1"))
-    public List<DemoData> upload(@RequestExcel List<WaitData> dataList, @RequestParam("jyhqz") String jyhqz, BindingResult bindingResult, HttpServletResponse response) {
+    @PostMapping("/upload")
+    public String upload(@RequestExcel List<WaitData> dataList, @RequestParam("jyhqz") String jyhqz, RedirectAttributes attribdatautes) {
         // JSR 303 校验通用校验获取失败的数据
 //        List<ErrorMessage> errorMessageList = (List<ErrorMessage>) bindingResult.getTarget();
         //交易号前缀+所有数据
-        response.addHeader("content-Type","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-        return new TestService().upload(dataList,jyhqz);
+        attribdatautes.addFlashAttribute("data", new TestService().upload(dataList,jyhqz));
+        return "redirect:/download";
     }
+
+    @ResponseExcel(name = "test", sheets = @Sheet(sheetName = "Sheet1"))
+    @GetMapping("/download")
+    public List<DemoData> test(@ModelAttribute("data") List<DemoData> dataList) {
+        return dataList;
+    }
+
 }
