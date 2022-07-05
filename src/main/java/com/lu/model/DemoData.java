@@ -1,6 +1,5 @@
 package com.lu.model;
 
-import com.alibaba.excel.annotation.ExcelIgnore;
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.Data;
 
@@ -11,48 +10,57 @@ public class DemoData {
 
 
     public DemoData(WaitData waitData) {
-        //买家昵称、买家姓名
-        if(waitData.getMjnc()!=null&&waitData.getMjnc()!=""){
+        //买家昵称、买家会员名
+        if(waitData.getMjnc()!=null&& !waitData.getMjnc().equals("")){
             this.mjnc=waitData.getMjnc();
-        } else if (waitData.getMjhym()!=null||waitData.getMjhym()!="") {
+        } else if (waitData.getMjhym()!=null&& !waitData.getMjhym().equals("")) {
             this.mjnc=waitData.getMjhym();
         }else {
             this.mjnc="";
         }
-        //买家收货人姓名，收货人
-        if(waitData.getShr()!=null&&waitData.getShr()!=""){
+        //收货人姓名，收货人、买家姓名
+        if(waitData.getShr()!=null&& !waitData.getShr().equals("")){
             this.shr=waitData.getShr();
-        } else if (waitData.getShrxm()!=null||waitData.getShrxm()!="") {
+        } else if (waitData.getShrxm()!=null&&!waitData.getShrxm().equals("")) {
             this.shr=waitData.getShrxm();
+        }else if(waitData.getXm()!=null&& !waitData.getXm().equals("")){
+            this.shr=waitData.getXm();
         }else {
             this.shr="";
         }
 
-        //收货人手机
-        if(waitData.getShrsj()!=null&&waitData.getShrsj()!=""){
+        //收货人手机、联系方式、收货人电话
+        if(waitData.getShrsj()!=null&& !waitData.getShrsj().equals("")){
             this.shrsj=waitData.getShrsj();
             this.shrdh=waitData.getShrsj();
-        }else if (waitData.getLxsj()!=null&&waitData.getLxsj()!=""){
+        }else if (waitData.getLxsj()!=null&& !waitData.getLxsj().equals("")){
             this.shrsj=waitData.getLxsj();
             this.shrdh=waitData.getLxsj();
-        }else if(waitData.getShrdh()!=null&&waitData.getShrdh()!=""){
+        }else if(waitData.getShrdh()!=null&& !waitData.getShrdh().equals("")){
             this.shrsj=waitData.getShrdh();
             this.shrdh=waitData.getShrdh();
         }else {
             this.shdz="";
             this.shrdh="";
         }
-        //宝贝标题、sku
-        if(waitData.getSku()!=null&&waitData.getSku()!=""){
+        //宝贝标题、sku、赠品名称
+        if(waitData.getSku()!=null&& !waitData.getSku().equals("")){
             this.sku=waitData.getSku();
-        }else if (waitData.getBbbt()!=null&&waitData.getBbbt()!=""){
+        }else if (waitData.getBbbt()!=null&& !waitData.getBbbt().equals("")){
             this.sku=waitData.getBbbt();
+        }else if(waitData.getZpmc()!=null&& !waitData.getBbbt().equals("")){
+            this.sku=waitData.getZpmc();
         }else {
             this.sku="";
         }
 
-        //收获地址、店铺名称、省、市、区
-        this.shdz=waitData.getShdz();
+        //收获地址、地址
+        if(waitData.getShdz()!=null&& !waitData.getShdz().equals("")){
+            this.shdz=waitData.getShdz();
+        }else if(waitData.getDz()!=null&& !waitData.getDz().equals("")){
+            this.shdz=waitData.getDz();
+        }
+        //店铺名称、省、市、区
         this.dpmc=waitData.getDpmc();
         this.sheng=waitData.getSheng();
         this.shi=waitData.getShi();

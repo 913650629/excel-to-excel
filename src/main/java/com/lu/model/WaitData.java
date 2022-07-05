@@ -18,8 +18,12 @@ public class WaitData {
     private String shrxm;
     @ExcelProperty("收货人")
     private String shr;
+    @ExcelProperty("姓名")
+    private String xm;
     @ExcelProperty("收货地址")
     private String shdz;
+    @ExcelProperty("地址")
+    private String dz;
     @ExcelProperty("店铺名称\n(下拉框选择）")
     private String dpmc;
     @ExcelProperty("省")
@@ -34,8 +38,12 @@ public class WaitData {
     private String shrsj;
     @ExcelProperty("收货人电话")
     private String shrdh;
+    @ExcelProperty("电话")
+    private String dh;
     @ExcelProperty("SKU")
     private String sku;
+    @ExcelProperty("赠品名称")
+    private String zpmc;
     @ExcelProperty("数量")
     private String sl;
     //未使用
