@@ -72,7 +72,7 @@ public class DemoData {
 
     @ExcelProperty(Constants.jyh)
     private String jyh;
-    @ExcelProperty(Constants.dlj)
+    @ExcelProperty(Constants.dpmc)
     private String dpmc;
     @ExcelProperty(Constants.mjnc)
     private String mjnc;

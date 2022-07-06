@@ -9,8 +9,8 @@
     <script type="text/javascript" src="layui/layui.js"></script>
 </head>
 <body style="background-image: url(bj.jpg);" >
-<div style="display:flex;align-items:center;justify-content:center;height: 66vh;">
-<form class="layui-form" action="/upload" method="post" enctype="multipart/form-data" style="width: 500px;background-color:rgba(252, 252, 252, 0.5);padding-top: 30px;
+<div style="display:flex;align-items:center;justify-content:center;height: 88vh;">
+<form class="layui-form" action="/upload" method="post" enctype="multipart/form-data" style="width: 500px;background-color:rgba(252, 252, 252, 0.8);padding-top: 50px;
 ">
     <div class="layui-form-item">
         <label class="layui-form-label">交易号前缀</label>
@@ -22,6 +22,27 @@
         <label class="layui-form-label">上传文件</label>
         <div class="layui-input-inline">
             <input type="file" name="file" required lay-verify="required" placeholder="选择文件" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">店铺名称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="dpmc" id="dpmc" placeholder="请输入店铺名称" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">单选框</label>
+        <div class="layui-input-block">
+            <input type="radio" name="kdbh" value="ZTO" title="ZTO" checked>
+            <input type="radio" name="kdbh" value="SF" title="SF" >
+        </div>
+        <div class="layui-form-mid" style="color: red">对未填写快递编号的空格进行补充填写</div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">数量</label>
+        <div class="layui-input-inline">
+            <input type="text" name="sl" id="sl" placeholder="请输入商品数量" autocomplete="off" value="1" class="layui-input">
+            <div class="layui-form-mid" style="color: red">对未填写商品数量进行补充</div>
         </div>
     </div>
     <table class="layui-table">

@@ -17,11 +17,11 @@ import java.util.List;
 public class TestController {
 
     @PostMapping("/upload")
-    public String upload(@RequestExcel List<WaitData> dataList, @RequestParam("jyhqz") String jyhqz, RedirectAttributes attribdatautes) {
+    public String upload(@RequestExcel List<WaitData> dataList, @RequestParam("jyhqz") String jyhqz, @RequestParam("kdbh") String kdbh,@RequestParam("sl") String sl,@RequestParam("dpmc") String dpmc,RedirectAttributes attribdatautes) {
         // JSR 303 校验通用校验获取失败的数据
 //        List<ErrorMessage> errorMessageList = (List<ErrorMessage>) bindingResult.getTarget();
         //交易号前缀+所有数据
-        attribdatautes.addFlashAttribute("data", new TestService().upload(dataList,jyhqz));
+        attribdatautes.addFlashAttribute("data", new TestService().upload(dataList,jyhqz,kdbh,sl,dpmc));
         return "redirect:/download";
     }
 
