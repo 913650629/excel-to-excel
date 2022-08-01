@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class TestService {
-    public List<DemoData> upload(List<WaitData> dataList,String jyhqz){
+    public List<DemoData> upload(List<WaitData> dataList,String jyhqz,String kdbh,String sl,String dpmc){
         List<DemoData> demoData=WaitToResult.test(dataList);
         String chars = "0123456789ABCDEFGHIZKLMNOPQRSTUVWXYZ";
         for (DemoData demoDatum : demoData) {
